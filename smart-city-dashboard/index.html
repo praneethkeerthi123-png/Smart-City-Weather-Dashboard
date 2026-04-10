@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart City Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <div class="app-shell">
+    <header class="hero glass">
+      <nav class="top-nav">
+        <div class="brand-wrap">
+          <div class="brand-badge">SC</div>
+          <div>
+            <p class="eyebrow">Urban Climate Intelligence</p>
+            <h1>Smart City Weather Dashboard</h1>
+          </div>
+        </div>
+
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+          <span class="theme-icon">🌙</span>
+          <span>Theme</span>
+        </button>
+      </nav>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-tag">Live forecast • Smart advice • Beautiful UI</p>
+          <h2>Check any city and get weather insights in a premium dashboard.</h2>
+          <p class="hero-subtitle">
+            Search cities, view current temperature, check the 5-day forecast,
+            and sort temperatures instantly.
+          </p>
+
+          <div class="hero-search glass-soft">
+            <input
+              type="text"
+              id="cityInput"
+              placeholder="Search a city like Pune, Hyderabad, London..."
+            />
+            <button id="searchBtn">Explore City</button>
+          </div>
+
+          <div class="control-row">
+            <div class="control-box glass-soft">
+              <label for="sortSelect">Sort Forecast</label>
+              <select id="sortSelect">
+                <option value="default">Default</option>
+                <option value="asc">Temperature: Low to High</option>
+                <option value="desc">Temperature: High to Low</option>
+              </select>
+            </div>
+
+            <div class="mini-stats glass-soft">
+              <div>
+                <span class="mini-label">API</span>
+                <strong>Open-Meteo</strong>
+              </div>
+              <div>
+                <span class="mini-label">Mode</span>
+                <strong>Live Data</strong>
+              </div>
+            </div>
+          </div>
+
+          <p id="status" class="status-text"></p>
+        </div>
+
+        <div id="heroPreview" class="hero-preview glass">
+          <div class="preview-top">
+            <span class="live-dot"></span>
+            <span>Weather Overview</span>
+          </div>
+
+          <div class="preview-body">
+            <h3 id="previewCity">Pune</h3>
+            <div id="previewIcon" class="preview-icon">🌤️</div>
+            <div id="previewTemp" class="preview-temp">--°C</div>
+            <p id="previewCondition" class="preview-condition">Loading live conditions...</p>
+          </div>
+
+          <div class="preview-footer">
+            <div class="preview-metric">
+              <span>Humidity</span>
+              <strong id="previewHumidity">--%</strong>
+            </div>
+            <div class="preview-metric">
+              <span>Wind</span>
+              <strong id="previewWind">-- km/h</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section id="currentWeather"></section>
+
+      <section class="section-head">
+        <div>
+          <p class="section-tag">Upcoming outlook</p>
+          <h3>5-Day Forecast</h3>
+        </div>
+      </section>
+
+      <section id="forecastContainer" class="forecast-grid"></section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
