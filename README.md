@@ -25,4 +25,4 @@ A modern weather dashboard built with HTML, CSS, and JavaScript. It fetches live
 - Array sort()
 
 ## Author
-Praneeth Keerthi
+Praneeth Keerthi.....
